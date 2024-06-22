@@ -1,5 +1,5 @@
 let Colors={
-    background:'#FAFAFAFC',
+    background:'#FAFAFA',
     primary:'#8968CD',
     black:'#0B0B0B',
     secondary:'#4B0082',

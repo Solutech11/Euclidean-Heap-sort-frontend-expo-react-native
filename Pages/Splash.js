@@ -7,9 +7,10 @@ import TextStyleStyle from '../Styles/TextStyle.style'
 import ScaleSize from '../Component/scaleSize.Comp'
 import Br from '../Component/Br.Comp'
 
-const Splash = () => {
+const Splash = ({navigation}) => {
   return (
     <SafeAreaView style={[GeneralStyle.Container,{backgroundColor:Colors.primary, justifyContent:'space-between'}]}>
+        
         
         {/* toptext */}
         <View>
@@ -28,7 +29,7 @@ const Splash = () => {
 
         <Image style={{width:ScaleSize(379), height:ScaleSize(366),alignSelf:'center'}} re source={require('../assets/financialGraph.png')} />
 
-        <TouchableOpacity style={{width:'100%', height:ScaleSize(61), alignItems:'center',justifyContent:'center', backgroundColor:Colors.white, borderRadius:40 }}>
+        <TouchableOpacity onPress={()=>navigation.push('SelectionScreen')} style={{width:'100%', height:ScaleSize(61), alignItems:'center',justifyContent:'center', backgroundColor:Colors.white, borderRadius:40 }}>
             <Text style={TextStyleStyle._20Signika500}>Get Started</Text>
         </TouchableOpacity>
     </SafeAreaView>

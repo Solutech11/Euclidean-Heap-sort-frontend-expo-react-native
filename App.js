@@ -8,6 +8,8 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Colors from './Styles/Colors';
 import { Sen_800ExtraBold, useFonts } from '@expo-google-fonts/sen';
 import { SignikaNegative_400Regular, SignikaNegative_500Medium, SignikaNegative_600SemiBold, SignikaNegative_700Bold } from '@expo-google-fonts/signika-negative';
+import SelectionScreen from './Pages/SelectionScreen';
+import EuclideanInput from './Pages/Euclidean/EuclideanInput';
 
 const Stack = createNativeStackNavigator();
 
@@ -34,6 +36,12 @@ export default function App() {
             {/* splash  */}
             <Stack.Screen name="Splash" component={Splash} />
           
+            {/* Selecion page */}
+            <Stack.Screen name='SelectionScreen' component={SelectionScreen} />
+         
+            {/* EUCLIDEAN INPUT */}
+            <Stack.Screen name='EuclideanInput' component={EuclideanInput} />
+
           </Stack.Navigator>
         </NavigationContainer>
       </SafeAreaProvider>
