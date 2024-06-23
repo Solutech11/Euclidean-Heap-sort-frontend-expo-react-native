@@ -11,10 +11,11 @@ import Btn_Comp from '../../Component/Btn.Comp'
 import { ALERT_TYPE, Dialog } from 'react-native-alert-notification'
 import ScaleSize from '../../Component/scaleSize.Comp'
 import Documentaion from '../../Component/Documentaion'
+import TypingAnimation from '../../Component/TypeAnimation.Comp'
 
 const HeapSortSolution = ({navigation, route}) => {
 
-    const [SolutionTag, setSolutionTag] = useState('')
+    const [SolutionTag, setSolutionTag] = useState(Documentaion.HeapSort)
 
   return (
     <Pressable onPress={()=>Keyboard.dismiss()} style={{flex:1}}>
@@ -37,7 +38,7 @@ const HeapSortSolution = ({navigation, route}) => {
 
             <ScrollView showsVerticalScrollIndicator={false} overScrollMode='never'>
                 <Pressable>
-                    <Text style={TextStyleStyle._20Signika400}>{SolutionTag}</Text>
+                    <TypingAnimation styless={TextStyleStyle._20Signika400} speed={10} text={SolutionTag} />
                 </Pressable>
                 
             </ScrollView>
