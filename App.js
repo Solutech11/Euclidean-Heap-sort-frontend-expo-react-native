@@ -11,6 +11,8 @@ import { SignikaNegative_400Regular, SignikaNegative_500Medium, SignikaNegative_
 import SelectionScreen from './Pages/SelectionScreen';
 import EuclideanInput from './Pages/Euclidean/EuclideanInput';
 import DocEuclidean from './Pages/Euclidean/Doc';
+import HeapSortInput from './Pages/HeapSort/HeapSortInput';
+import DocHeapSort from './Pages/HeapSort/Doc';
 
 const Stack = createNativeStackNavigator();
 
@@ -45,6 +47,13 @@ export default function App() {
 
             {/* EUCLIDEAN DOCUMENTATION */}
             <Stack.Screen name='EuclideanDoc' component={DocEuclidean} />
+
+
+            {/* HEAP SORT INPUT */}
+            <Stack.Screen name='HeapSortInput' component={HeapSortInput} />
+
+            {/* HEAP SORT DOCUMENTAION */}
+            <Stack.Screen name='HeapSortDoc' component={DocHeapSort} />
 
           </Stack.Navigator>
         </NavigationContainer>

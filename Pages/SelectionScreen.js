@@ -18,7 +18,7 @@ const SelectionScreen = ({navigation}) => {
 
         <SelectCardsComp Action={()=>navigation.navigate('EuclideanInput')} img={require('../assets/E.png')} text={'Euclidean Algorithm'} />
 
-        <SelectCardsComp img={require('../assets/heapsort.png')} text={'Heap Sort'} />
+        <SelectCardsComp Action={()=>navigation.navigate('HeapSortInput')} img={require('../assets/heapsort.png')} text={'Heap Sort'} />
 
 
     </SafeAreaView>
