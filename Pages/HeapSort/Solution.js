@@ -12,38 +12,47 @@ import { ALERT_TYPE, Dialog } from 'react-native-alert-notification'
 import ScaleSize from '../../Component/scaleSize.Comp'
 import Documentaion from '../../Component/Documentaion'
 
-const DocEuclidean = ({navigation}) => {
+const HeapSortSolution = ({navigation, route}) => {
+
+    const [SolutionTag, setSolutionTag] = useState('')
 
   return (
     <Pressable onPress={()=>Keyboard.dismiss()} style={{flex:1}}>
     <SafeAreaView style={[GeneralStyle.Container,{alignItems:'center', paddingTop:0}]}>
 
         {/* Nav */}
-        <NavComp navigation={navigation} />
+        <NavComp navigation={navigation} doc={'HeapSortDoc'} />
 
         <Br height={20} />
         {/* toptexts */}
         <View style={styles.toptextContainer}>
-          <Text style={[TextStyleStyle._38Sen800,{textAlign:'center'}]}>Euclidean Algorithm Documentation</Text>
+          <Text style={[TextStyleStyle._38Sen800,{textAlign:'center'}]}>Heap Sort</Text>
         </View>
 
-        <Br height={20} />
+        <Br height={60} />
 
         {/* body */}
+        <Text style={[TextStyleStyle._16Signika400,{color:Colors.subText, marginBottom:ScaleSize(10)}]}>Solution</Text>
         <View style={styles.BodyContainer}>
+
             <ScrollView showsVerticalScrollIndicator={false} overScrollMode='never'>
                 <Pressable>
-                <Text style={TextStyleStyle._20Signika400}>{Documentaion.Euclidean}</Text>
+                    <Text style={TextStyleStyle._20Signika400}>{SolutionTag}</Text>
                 </Pressable>
                 
             </ScrollView>
         </View>
+
+        <Br height={30} />
+
+        <Btn_Comp text={"Done"} action={()=>navigation.pop()} />
+
     </SafeAreaView>
     </Pressable>
   )
 }
 
-export default DocEuclidean
+export default HeapSortSolution
 
 const styles = StyleSheet.create({
     toptextContainer:{
@@ -52,8 +61,8 @@ const styles = StyleSheet.create({
         width:377
     },
     BodyContainer:{
-        width: ScaleSize(379),
-        flex:1,
+        width: ScaleSize(345),
+        height:ScaleSize(499),
         backgroundColor:Colors.white,
         borderWidth:1,
         borderColor:Colors.secondary,

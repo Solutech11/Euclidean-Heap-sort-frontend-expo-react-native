@@ -13,6 +13,7 @@ import EuclideanInput from './Pages/Euclidean/EuclideanInput';
 import DocEuclidean from './Pages/Euclidean/Doc';
 import HeapSortInput from './Pages/HeapSort/HeapSortInput';
 import DocHeapSort from './Pages/HeapSort/Doc';
+import HeapSortSolution from './Pages/HeapSort/Solution';
 
 const Stack = createNativeStackNavigator();
 
@@ -54,6 +55,11 @@ export default function App() {
 
             {/* HEAP SORT DOCUMENTAION */}
             <Stack.Screen name='HeapSortDoc' component={DocHeapSort} />
+
+            {/* HEAP SORT SOLUTION */}
+            <Stack.Screen name='HeapSortSolution' component={HeapSortSolution} options={{
+              animation:'slide_from_bottom'
+            }} />
 
           </Stack.Navigator>
         </NavigationContainer>

@@ -9,8 +9,11 @@ import Br from '../../Component/Br.Comp'
 import InputsComp from '../../Component/Inputs.Comp'
 import Btn_Comp from '../../Component/Btn.Comp'
 import { ALERT_TYPE, Dialog } from 'react-native-alert-notification'
+import LoadingComp from '../../Component/Loading.Comp'
 
 const EuclideanInput = ({navigation}) => {
+
+    const [Loading, setLoading] = useState(false)
 
     //input
     const [Input1, setInput1] = useState()
@@ -30,6 +33,7 @@ const EuclideanInput = ({navigation}) => {
     <Pressable onPress={()=>Keyboard.dismiss()} style={{flex:1}}>
     <SafeAreaView style={[GeneralStyle.Container,{alignItems:'center', paddingTop:0}]}>
 
+        <LoadingComp visible={Loading} />
         {/* Nav */}
         <NavComp navigation={navigation} doc={'EuclideanDoc'} />
 
