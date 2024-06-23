@@ -28,7 +28,7 @@ export default function App() {
   }
 
   return (
-    <AlertNotificationRoot theme='light'>
+    <AlertNotificationRoot colors={[{success:Colors.primary, card:Colors.background}]} theme='light'>
       <SafeAreaProvider>
         <NavigationContainer>
           <Stack.Navigator screenOptions={{headerShown:false}}>

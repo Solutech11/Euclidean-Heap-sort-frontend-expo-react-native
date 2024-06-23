@@ -15,7 +15,7 @@ export default StyleSheet.create({
         fontFamily:"SignikaNegative_400Regular",
     },
     _20Signika500:{
-        fontSize:ScaleSize(15),
+        fontSize:ScaleSize(20),
         fontFamily:"SignikaNegative_500Medium",      
     },
     _32Signika600:{
