@@ -1,5 +1,7 @@
 export default {
-    Euclidean:`1. Identify the Two Numbers:
+    Euclidean:`The Euclidean algorithm is named after the ancient Greek mathematician Euclid, who first described it in his book "Elements". It is an efficient method for computing the greatest common divisor (GCD) of two integers.
+    
+1. Identify the Two Numbers:
    - Let the two numbers be a and b, where a >= b.
 
 2. Initial Check:
