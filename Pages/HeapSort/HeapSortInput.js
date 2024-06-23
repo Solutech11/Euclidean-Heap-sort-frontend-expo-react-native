@@ -10,6 +10,7 @@ import InputsComp from '../../Component/Inputs.Comp'
 import Btn_Comp from '../../Component/Btn.Comp'
 import { ALERT_TYPE, Dialog } from 'react-native-alert-notification'
 import LoadingComp from '../../Component/Loading.Comp'
+import axios from 'axios'
 
 const HeapSortInput = ({navigation}) => {
     //loading
@@ -17,9 +18,41 @@ const HeapSortInput = ({navigation}) => {
     //input
     const [Input1, setInput1] = useState()
 
+    //changeinput
+    function changeText(text) {
+        console.log(text);
+        if (isNaN(text[text.length-1])==false || text[text.length-1]==',' || text.length==0) return setInput1(text);
+        
+    }
+     
     //runapi 
     async function runApi() {
-        navigation.navigate('HeapSortSolution')
+        setLoading(true)
+        try {
+            let intigration= await axios({
+                url:`${process.env.EXPO_PUBLIC_API_URL}/heapsort`,
+                method:'post',
+                headers:{
+                    'Accept':'application/json',
+                    'Content-Type':'application/json'
+                },
+                data:JSON.stringify({
+                    array:Input1,
+                })
+            })
+
+
+            navigation.navigate('HeapSortSolution', {solution:intigration.data.Result})
+            
+        } catch (error) {
+            console.log(error);
+            Toast.show({
+                title:"Couldnt get solution, Try again",
+                type:ALERT_TYPE.DANGER
+            });
+        }finally{
+            setLoading(false)
+        }
     }
   return (
     <Pressable onPress={()=>Keyboard.dismiss()} style={{flex:1}}>
@@ -40,7 +73,7 @@ const HeapSortInput = ({navigation}) => {
         {/* inputs */}
         <View style={styles.inputContainer}>
 
-            <InputsComp longInput={true} changeText={setInput1} title={"Array"} />
+            <InputsComp longInput={true} value={Input1} changeText={changeText} title={"Array"} />
 
 
         </View>

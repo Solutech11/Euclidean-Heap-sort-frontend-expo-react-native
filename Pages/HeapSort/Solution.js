@@ -15,7 +15,7 @@ import TypingAnimation from '../../Component/TypeAnimation.Comp'
 
 const HeapSortSolution = ({navigation, route}) => {
 
-    const [SolutionTag, setSolutionTag] = useState(Documentaion.HeapSort)
+    let {solution}= route.params;
 
   return (
     <Pressable onPress={()=>Keyboard.dismiss()} style={{flex:1}}>
@@ -38,7 +38,7 @@ const HeapSortSolution = ({navigation, route}) => {
 
             <ScrollView showsVerticalScrollIndicator={false} overScrollMode='never'>
                 <Pressable>
-                    <TypingAnimation styless={TextStyleStyle._20Signika400} speed={10} text={SolutionTag} />
+                    <TypingAnimation styless={TextStyleStyle._20Signika400} speed={10} text={`${solution}`} />
                 </Pressable>
                 
             </ScrollView>
