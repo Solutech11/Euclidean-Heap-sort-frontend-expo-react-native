@@ -1,4 +1,4 @@
-import { Keyboard, Pressable, StyleSheet, Text, View } from 'react-native'
+import { Keyboard, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import TextStyleStyle from '../../Styles/TextStyle.style'
@@ -9,8 +9,10 @@ import Br from '../../Component/Br.Comp'
 import InputsComp from '../../Component/Inputs.Comp'
 import Btn_Comp from '../../Component/Btn.Comp'
 import { ALERT_TYPE, Dialog } from 'react-native-alert-notification'
+import ScaleSize from '../../Component/scaleSize.Comp'
+import Documentaion from '../../Component/Documentaion'
 
-const EuclideanInput = ({navigation}) => {
+const DocEuclidean = ({navigation}) => {
 
     //input
     const [Input1, setInput1] = useState()
@@ -31,35 +33,31 @@ const EuclideanInput = ({navigation}) => {
     <SafeAreaView style={[GeneralStyle.Container,{alignItems:'center', paddingTop:0}]}>
 
         {/* Nav */}
-        <NavComp navigation={navigation} doc={'EuclideanDoc'} />
+        <NavComp navigation={navigation} />
 
-        <Br height={100} />
+        <Br height={20} />
         {/* toptexts */}
         <View style={styles.toptextContainer}>
-          <Text style={TextStyleStyle._38Sen800}>Euclidean Algorithm</Text>
-          <Text style={[TextStyleStyle._16Signika400,{color:Colors.subText}]}>Fill in the input</Text>
+          <Text style={[TextStyleStyle._38Sen800,{textAlign:'center'}]}>Euclidean Algorithm Documentation</Text>
         </View>
 
-        <Br height={70} />
-        {/* inputs */}
-        <View style={styles.inputContainer}>
+        <Br height={20} />
 
-            <InputsComp changeText={setInput1} title={"Input A"} />
-
-            <InputsComp changeText={setInput2} title={"Input B"} />
-
+        {/* body */}
+        <View style={styles.BodyContainer}>
+            <ScrollView showsVerticalScrollIndicator={false} overScrollMode='never'>
+                <Pressable>
+                <Text style={TextStyleStyle._20Signika400}>{Documentaion.Euclidean}</Text>
+                </Pressable>
+                
+            </ScrollView>
         </View>
-
-        <Br height={50} />
-
-        {/* submit btn  */}
-        <Btn_Comp text={"Submit"} action={runApi} />
     </SafeAreaView>
     </Pressable>
   )
 }
 
-export default EuclideanInput
+export default DocEuclidean
 
 const styles = StyleSheet.create({
     toptextContainer:{
@@ -67,9 +65,13 @@ const styles = StyleSheet.create({
         gap:5,
         width:377
     },
-    inputContainer:{
-        flexDirection:'row',
-        justifyContent:'space-evenly',
-        width: "100%",
+    BodyContainer:{
+        width: ScaleSize(379),
+        flex:1,
+        backgroundColor:Colors.white,
+        borderWidth:1,
+        borderColor:Colors.secondary,
+        borderRadius:21,
+        padding:15,
     }
 })

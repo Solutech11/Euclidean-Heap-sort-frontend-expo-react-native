@@ -10,6 +10,7 @@ import { Sen_800ExtraBold, useFonts } from '@expo-google-fonts/sen';
 import { SignikaNegative_400Regular, SignikaNegative_500Medium, SignikaNegative_600SemiBold, SignikaNegative_700Bold } from '@expo-google-fonts/signika-negative';
 import SelectionScreen from './Pages/SelectionScreen';
 import EuclideanInput from './Pages/Euclidean/EuclideanInput';
+import DocEuclidean from './Pages/Euclidean/Doc';
 
 const Stack = createNativeStackNavigator();
 
@@ -41,6 +42,9 @@ export default function App() {
          
             {/* EUCLIDEAN INPUT */}
             <Stack.Screen name='EuclideanInput' component={EuclideanInput} />
+
+            {/* EUCLIDEAN DOCUMENTATION */}
+            <Stack.Screen name='EuclideanDoc' component={DocEuclidean} />
 
           </Stack.Navigator>
         </NavigationContainer>

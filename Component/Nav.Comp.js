@@ -3,7 +3,7 @@ import React from 'react'
 import { AntDesign } from '@expo/vector-icons';
 import TextStyleStyle from '../Styles/TextStyle.style';
 
-const NavComp = ({navigation}) => {
+const NavComp = ({navigation,doc}) => {
   return (
     <View style={styles.Container}>
       
@@ -12,9 +12,10 @@ const NavComp = ({navigation}) => {
         <Text style={TextStyleStyle._15Signika400}>Back</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={()=>navigation.navigate('Documentaion')}>
+      {doc?<TouchableOpacity onPress={()=>navigation.navigate(doc)}>
         <Text style={TextStyleStyle._15Signika400}>Learn more</Text>
-      </TouchableOpacity>
+      </TouchableOpacity>:null}
+      
     </View>
   )
 }
