@@ -6,11 +6,12 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import TextStyleStyle from '../Styles/TextStyle.style'
 import ScaleSize from '../Component/scaleSize.Comp'
 import Br from '../Component/Br.Comp'
+import { StatusBar } from 'expo-status-bar'
 
 const Splash = ({navigation}) => {
   return (
     <SafeAreaView style={[GeneralStyle.Container,{backgroundColor:Colors.primary, justifyContent:'space-between'}]}>
-        
+        <StatusBar style='dark' />
         
         {/* toptext */}
         <View>

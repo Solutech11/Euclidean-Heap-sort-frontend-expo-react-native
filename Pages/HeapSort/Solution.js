@@ -12,6 +12,7 @@ import { ALERT_TYPE, Dialog } from 'react-native-alert-notification'
 import ScaleSize from '../../Component/scaleSize.Comp'
 import Documentaion from '../../Component/Documentaion'
 import TypingAnimation from '../../Component/TypeAnimation.Comp'
+import { StatusBar } from 'expo-status-bar'
 
 const HeapSortSolution = ({navigation, route}) => {
 
@@ -19,6 +20,8 @@ const HeapSortSolution = ({navigation, route}) => {
 
   return (
     <Pressable onPress={()=>Keyboard.dismiss()} style={{flex:1}}>
+        <StatusBar style='dark' />
+
     <SafeAreaView style={[GeneralStyle.Container,{alignItems:'center', paddingTop:0}]}>
 
         {/* Nav */}

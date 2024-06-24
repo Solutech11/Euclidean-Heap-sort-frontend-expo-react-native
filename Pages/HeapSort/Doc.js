@@ -11,10 +11,13 @@ import Btn_Comp from '../../Component/Btn.Comp'
 import { ALERT_TYPE, Dialog } from 'react-native-alert-notification'
 import ScaleSize from '../../Component/scaleSize.Comp'
 import Documentaion from '../../Component/Documentaion'
+import { StatusBar } from 'expo-status-bar'
 
 const DocHeapSort = ({navigation}) => {
   return (
     <Pressable onPress={()=>Keyboard.dismiss()} style={{flex:1}}>
+        <StatusBar style='dark' />
+
     <SafeAreaView style={[GeneralStyle.Container,{alignItems:'center', paddingTop:0}]}>
 
         {/* Nav */}

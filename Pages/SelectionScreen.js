@@ -5,10 +5,12 @@ import GeneralStyle from '../Styles/General.style'
 import TextStyleStyle from '../Styles/TextStyle.style'
 import Colors from '../Styles/Colors'
 import SelectCardsComp from '../Component/SelectCards.Comp'
+import { StatusBar } from 'expo-status-bar'
 
 const SelectionScreen = ({navigation}) => {
   return (
     <SafeAreaView style={[GeneralStyle.Container,{alignItems:'center',justifyContent:'space-evenly'}]}>
+        <StatusBar style='dark' />
         
         {/* toptexts */}
         <View style={{alignItems:'center', gap:5}}>

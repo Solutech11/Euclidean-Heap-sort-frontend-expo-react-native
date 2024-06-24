@@ -11,6 +11,7 @@ import Btn_Comp from '../../Component/Btn.Comp'
 import { ALERT_TYPE, Dialog, Toast } from 'react-native-alert-notification'
 import LoadingComp from '../../Component/Loading.Comp'
 import axios from 'axios'
+import { StatusBar } from 'expo-status-bar'
 
 const EuclideanInput = ({navigation}) => {
 
@@ -56,6 +57,8 @@ const EuclideanInput = ({navigation}) => {
     }
   return (
     <Pressable onPress={()=>Keyboard.dismiss()} style={{flex:1}}>
+        <StatusBar style='dark' />
+    
     <SafeAreaView style={[GeneralStyle.Container,{alignItems:'center', paddingTop:0}]}>
 
         <LoadingComp visible={Loading} />

@@ -6,16 +6,16 @@ import GeneralStyle from '../../Styles/General.style'
 import Colors from '../../Styles/Colors'
 import NavComp from '../../Component/Nav.Comp'
 import Br from '../../Component/Br.Comp'
-import InputsComp from '../../Component/Inputs.Comp'
-import Btn_Comp from '../../Component/Btn.Comp'
-import { ALERT_TYPE, Dialog } from 'react-native-alert-notification'
 import ScaleSize from '../../Component/scaleSize.Comp'
 import Documentaion from '../../Component/Documentaion'
+import { StatusBar } from 'expo-status-bar'
 
 const DocEuclidean = ({navigation}) => {
 
   return (
     <Pressable onPress={()=>Keyboard.dismiss()} style={{flex:1}}>
+        <StatusBar style='dark' />
+    
     <SafeAreaView style={[GeneralStyle.Container,{alignItems:'center', paddingTop:0}]}>
 
         {/* Nav */}
