@@ -8,7 +8,7 @@ import NavComp from '../../Component/Nav.Comp'
 import Br from '../../Component/Br.Comp'
 import InputsComp from '../../Component/Inputs.Comp'
 import Btn_Comp from '../../Component/Btn.Comp'
-import { ALERT_TYPE, Dialog } from 'react-native-alert-notification'
+import { ALERT_TYPE, Dialog, Toast } from 'react-native-alert-notification'
 import LoadingComp from '../../Component/Loading.Comp'
 import axios from 'axios'
 import { StatusBar } from 'expo-status-bar'
@@ -21,7 +21,6 @@ const HeapSortInput = ({navigation}) => {
 
     //changeinput
     function changeText(text) {
-        console.log(text);
         if (isNaN(text[text.length-1])==false || text[text.length-1]==',' || text.length==0) return setInput1(text);
         
     }
@@ -46,7 +45,7 @@ const HeapSortInput = ({navigation}) => {
             navigation.navigate('HeapSortSolution', {solution:intigration.data.Result})
             
         } catch (error) {
-            console.log(error);
+            console.log(error.response?.data);
             Toast.show({
                 title:"Couldnt get solution, Try again",
                 type:ALERT_TYPE.DANGER
